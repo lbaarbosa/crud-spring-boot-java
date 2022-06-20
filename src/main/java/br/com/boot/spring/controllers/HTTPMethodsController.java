@@ -3,7 +3,7 @@ package br.com.boot.spring.controllers;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/methods")
+@RequestMapping("/api/methods")
 public class HTTPMethodsController {
 
     @GetMapping

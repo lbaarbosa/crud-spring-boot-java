@@ -7,7 +7,7 @@ package br.com.boot.spring.controllers;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/calculator")
+@RequestMapping("/api/calculator")
 public class CalculatorExampleController {
 
     @GetMapping("/sum/{a}/{b}")

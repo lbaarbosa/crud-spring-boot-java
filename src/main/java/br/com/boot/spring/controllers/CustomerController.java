@@ -4,7 +4,7 @@ import br.com.boot.spring.model.entities.Customer;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/api/customers")
 public class CustomerController {
 
     @GetMapping("/any")
