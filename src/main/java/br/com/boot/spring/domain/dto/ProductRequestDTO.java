@@ -1,46 +1,32 @@
-package br.com.boot.spring.model.entities;
+package br.com.boot.spring.domain.dto;
 
-import br.com.boot.spring.domain.dto.ProductRequestDTO;
 import br.com.boot.spring.domain.dto.request.ProductRequest;
 
-import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
+public class ProductRequestDTO {
 
-@Entity
-@Table(name = "products")
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotBlank
     private String name;
 
-    @Min(0)
     private double price;
 
-    @Min(0)
-    @Max(1)
     private double discount;
 
-    public Product() {
+    public ProductRequestDTO() {
         super();
     }
 
-    public Product(String name, double price, double discount) {
+    public ProductRequestDTO(String name, double price, double discount) {
         this.name = name;
         this.price = price;
         this.discount = discount;
     }
 
-    public Product(ProductRequestDTO productRequestDTO) {
-        this.id = productRequestDTO.getId();
-        this.name = productRequestDTO.getName();
-        this.price = productRequestDTO.getPrice();
-        this.discount = productRequestDTO.getDiscount();
+    public ProductRequestDTO(ProductRequest productRequest) {
+        this.id = productRequest.getId();
+        this.name = productRequest.getName();
+        this.price = productRequest.getPrice();
+        this.discount = productRequest.getDiscount();
     }
 
     public int getId() {
