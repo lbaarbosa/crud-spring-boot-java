@@ -16,6 +16,7 @@ In this project, I used the following patterns:
 * Swagger 2
 * JPA
 * MySQL
+* Lombok
 
 ## Screenshot
 ![Swagger API screenshot](./rest-api.png)
