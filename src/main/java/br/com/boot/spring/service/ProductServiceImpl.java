@@ -47,14 +47,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public List<ProductResponseDTO> getProductsByPage(int pageNumber, int itemsByPage) {
-        if(itemsByPage >= 5) itemsByPage = 5;
+        if (itemsByPage >= 5) itemsByPage = 5;
         Pageable page = PageRequest.of(pageNumber, itemsByPage);
         List<ProductResponseDTO> productResponseDTOList = new ArrayList<>();
         productRepository
                 .findAll(page)
                 .forEach(
-                p -> productResponseDTOList
-                            .add(new ProductResponseDTO(p))
+                        p -> productResponseDTOList
+                                .add(new ProductResponseDTO(p))
                 );
         return productResponseDTOList;
     }

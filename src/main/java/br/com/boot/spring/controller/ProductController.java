@@ -21,12 +21,12 @@ public class ProductController {
 
     @RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
     public @ResponseBody
-        ProductResponse saveProduct(
-                        @Valid ProductRequest productRequest
-        ) {
-            ProductRequestDTO productRequestDTO =
-                    new ProductRequestDTO(productRequest);
-            return new ProductResponse(productService.saveProduct(productRequestDTO));
+    ProductResponse saveProduct(
+            @Valid ProductRequest productRequest
+    ) {
+        ProductRequestDTO productRequestDTO =
+                new ProductRequestDTO(productRequest);
+        return new ProductResponse(productService.saveProduct(productRequestDTO));
     }
 
     @GetMapping(path = "/all")
@@ -37,7 +37,7 @@ public class ProductController {
                 .map(
                         p -> new ProductResponse(p)
                 ).collect(Collectors.toList()
-        );
+                );
     }
 
     @GetMapping(path = "/name/{name}")
@@ -48,7 +48,7 @@ public class ProductController {
                 .map(
                         p -> new ProductResponse(p)
                 ).collect(Collectors.toList()
-        );
+                );
     }
 
     @GetMapping(path = "/page/{pageNumber}/{itemsByPage}")
@@ -62,7 +62,7 @@ public class ProductController {
                 .map(
                         p -> new ProductResponse(p)
                 ).collect(Collectors.toList()
-        );
+                );
     }
 
     @GetMapping(path = "/{id}")
@@ -70,7 +70,7 @@ public class ProductController {
         return productService
                 .getProductById(id)
                 .map(p -> new ProductResponse(p)
-        );
+                );
     }
 
     @DeleteMapping(path = "/{id}")

@@ -5,7 +5,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
-public interface ProductRepository extends PagingAndSortingRepository<Product,Integer> {
+public interface ProductRepository extends PagingAndSortingRepository<Product, Integer> {
 
     public List<Product> findByNameContainingIgnoreCase(String name);
 
